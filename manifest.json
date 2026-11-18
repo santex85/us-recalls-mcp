@@ -1,0 +1,70 @@
+{
+  "manifest_version": "0.4",
+  "name": "us-recalls-mcp",
+  "display_name": "US Product Recalls (FDA, NHTSA, CPSC)",
+  "version": "0.1.0",
+  "description": "US product recalls from FDA (food, drugs, devices), NHTSA (vehicles) and CPSC (consumer products).",
+  "long_description": "Live access to official US product recalls: FDA food, drug and device enforcement reports (openFDA), NHTSA vehicle and equipment recalls, and CPSC consumer product recalls. Search, recent recalls, vehicle recalls by make/model/year and recall details. No API key needed.",
+  "author": {
+    "name": "santex85",
+    "url": "https://github.com/santex85"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/santex85/us-recalls-mcp"
+  },
+  "homepage": "https://github.com/santex85/us-recalls-mcp",
+  "support": "https://github.com/santex85/us-recalls-mcp/issues",
+  "license": "MIT",
+  "keywords": [
+    "recalls",
+    "fda",
+    "nhtsa",
+    "cpsc",
+    "safety"
+  ],
+  "server": {
+    "type": "uv",
+    "entry_point": "src/server.py",
+    "mcp_config": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--directory",
+        "${__dirname}",
+        "src/server.py"
+      ],
+      "env": {
+        "MCP_TRANSPORT": "stdio"
+      }
+    }
+  },
+  "tools": [
+    {
+      "name": "search_recalls",
+      "description": "Search official US recalls by keyword/brand across FDA, NHTSA and CPSC."
+    },
+    {
+      "name": "recent_recalls",
+      "description": "Latest official US recalls from the last N days (no keyword), newest first."
+    },
+    {
+      "name": "vehicle_recalls",
+      "description": "Complete NHTSA recall history for one vehicle (make, model, model year), newest first."
+    },
+    {
+      "name": "recall_details",
+      "description": "Full record for one recall by its official ID (untrimmed text, plus extra source fields in \"raw\")."
+    }
+  ],
+  "compatibility": {
+    "platforms": [
+      "darwin",
+      "linux",
+      "win32"
+    ],
+    "runtimes": {
+      "python": ">=3.10"
+    }
+  }
+}
