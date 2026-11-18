@@ -1,0 +1,22 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.santex85/us-recalls-mcp",
+  "title": "US Product Recalls (FDA, NHTSA, CPSC)",
+  "description": "US product recalls from FDA (food, drugs, devices), NHTSA (vehicles) and CPSC (consumer products).",
+  "repository": {
+    "url": "https://github.com/santex85/us-recalls-mcp",
+    "source": "github"
+  },
+  "version": "0.1.0",
+  "packages": [
+    {
+      "registryType": "mcpb",
+      "identifier": "https://github.com/santex85/us-recalls-mcp/releases/download/v0.1.0/us-recalls-mcp.mcpb",
+      "version": "0.1.0",
+      "fileSha256": "12cb92286f4657e94598ab75027492c85e8b64b3dcdd125c62097fc356887f04",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ]
+}
