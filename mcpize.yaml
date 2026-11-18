@@ -1,0 +1,10 @@
+version: 1
+name: us-recalls-mcp
+description: US product recalls from FDA (food, drugs, devices), NHTSA (vehicles) and CPSC (consumer products) - search, recent recalls, vehicle recalls by make/model/year, recall details.
+runtime: python
+entry: src/server.py
+build:
+  install: python -m venv .venv && .venv/bin/pip install --no-cache-dir -r requirements.txt
+startCommand:
+  type: http
+  command: .venv/bin/python src/server.py
